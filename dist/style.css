@@ -1,0 +1,599 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  color: #111418;
+}
+
+body {
+  padding: 0em 0em 0em 15em;
+  overflow-x: hidden;
+}
+
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #111418;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 15em;
+  color: #fff;
+  padding: 2em;
+  gap: 1em;
+}
+
+.avatar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+.avatar--image {
+  width: 10em;
+  border-radius: 50%;
+  border: 0.5em solid #343a40;
+  object-fit: cover;
+}
+.avatar p {
+  margin-top: -1em;
+  font-size: 0.9rem;
+  font-weight: 200;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+}
+.nav-links a:hover {
+  color: #0dcaf0;
+}
+
+.icons {
+  display: flex;
+  transform: scale(1.25);
+  gap: 1em;
+}
+.icons a {
+  text-decoration: none;
+}
+.icons a:visited {
+  color: #fff;
+}
+.icons i {
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.icons i:hover {
+  color: #0dcaf0;
+}
+
+#welcome-section {
+  position: relative;
+  object-fit: cover;
+  height: 100vh;
+  width: calc(100vw - 15em);
+  margin-bottom: 10em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  gap: 1em;
+}
+#welcome-section img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  filter: grayscale(0.8) brightness(30%);
+  z-index: -1;
+}
+#welcome-section p {
+  font-size: 1.5rem;
+}
+#welcome-section p:first-of-type {
+  font-weight: 800;
+}
+#welcome-section h1 {
+  font-size: 3rem;
+}
+#welcome-section button {
+  padding: 1em 2.5em;
+  background-color: transparent;
+  border: 0.1em solid #0dcaf0;
+  border-radius: 2em;
+  color: #0dcaf0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+#welcome-section button:hover {
+  background-color: #0dcaf0;
+  color: #fff;
+}
+#welcome-section .fa-angle-down {
+  position: absolute;
+  bottom: 1em;
+  font-size: 1.5rem;
+  animation: downArrow 1s ease-in-out infinite;
+}
+
+@keyframes downArrow {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(1em);
+  }
+}
+#typed-text {
+  display: inline-block;
+  position: relative;
+}
+
+#typed-text::after {
+  content: "|";
+  position: absolute;
+  margin-left: 3px;
+  animation: caret-blink 1s steps(1) infinite;
+}
+
+@keyframes caret-blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+#about-me {
+  margin: 6em 0em;
+  padding: 4em 2em 2em 2em;
+  position: relative;
+}
+#about-me h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 2em;
+}
+#about-me h2 > span {
+  border-bottom: 0.1em solid #0dcaf0;
+}
+#about-me > span {
+  font-size: 6rem;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  color: #343a40;
+  opacity: 0.2;
+  margin: 0 auto;
+}
+
+.aboutText {
+  display: flex;
+  font-size: 0.9rem;
+  gap: 2em;
+}
+.aboutText__left {
+  flex: 2;
+}
+.aboutText__left p {
+  margin-bottom: 1em;
+}
+.aboutText__left p:first-of-type {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.aboutText__left p:first-of-type span {
+  color: #0dcaf0;
+}
+.aboutText__right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.aboutText__right span {
+  font-weight: 600;
+}
+.aboutText__right a {
+  text-decoration: none;
+  color: #111418;
+}
+.aboutText__right p,
+.aboutText__right a {
+  padding-bottom: 0.5em;
+  border-bottom: 0.1em solid rgba(0, 0, 0, 0.1);
+}
+.aboutText__right button {
+  background-color: #0dcaf0;
+  color: #fff;
+  padding: 1em;
+  border: none;
+  border-radius: 2em;
+  font-size: 1.05rem;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0.1em 0.1em 0.25em rgba(0, 0, 0, 0.4);
+  transition: all 0.15s ease;
+}
+.aboutText__right button:hover {
+  filter: brightness(95%);
+}
+
+#description {
+  margin: 6em 0em;
+  padding: 4em 2em 2em 2em;
+  position: relative;
+}
+#description h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 2em;
+}
+#description h2 > span {
+  border-bottom: 0.1em solid #0dcaf0;
+}
+#description > span {
+  font-size: 6rem;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  color: #343a40;
+  opacity: 0.2;
+  margin: 0 auto;
+}
+
+.squares {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2em;
+}
+
+.item {
+  display: flex;
+  gap: 1em;
+}
+.item__icon {
+  padding: 1em;
+  width: 4em;
+  height: 4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.4);
+}
+.item__icon i {
+  font-size: 1.5rem;
+}
+.item__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.item__text p {
+  font-size: 0.9rem;
+}
+
+#skills {
+  margin: 6em 0em;
+  padding: 4em 2em 2em 2em;
+  position: relative;
+}
+#skills h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 2em;
+}
+#skills h2 > span {
+  border-bottom: 0.1em solid #0dcaf0;
+}
+#skills > span {
+  font-size: 6rem;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  color: #343a40;
+  opacity: 0.2;
+  margin: 0 auto;
+}
+#skills h3 {
+  margin: 2em 0;
+}
+
+.mini-card {
+  display: flex;
+  margin-bottom: 1em;
+}
+.mini-card i {
+  width: 2em;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  margin-right: 2em;
+}
+
+.buttonCV {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.buttonCV button {
+  padding: 1em 3em;
+  margin: 2em 0;
+  background-color: #fff;
+  color: #343a40;
+  border: 0.1em solid #343a40;
+  border-radius: 2em;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  position: relative;
+}
+.buttonCV button:hover {
+  background-color: #343a40;
+  color: #fff;
+}
+
+.component {
+  display: flex;
+  flex-direction: column;
+  border: 0.1em solid rgba(0, 0, 0, 0.1);
+  padding: 2em;
+  font-size: 0.9rem;
+}
+.component p:first-of-type {
+  background-color: #0dcaf0;
+  color: #fff;
+  padding: 0.25em;
+  width: 8em;
+  text-align: center;
+  border-radius: 1em;
+  margin-bottom: 1em;
+}
+.component h4 {
+  font-size: 1.1rem;
+}
+.component p:nth-of-type(2) {
+  color: #de3545;
+  margin-bottom: 1em;
+}
+
+#projects {
+  margin: 6em 0em;
+  padding: 4em 2em 2em 2em;
+  position: relative;
+}
+#projects h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 2em;
+}
+#projects h2 > span {
+  border-bottom: 0.1em solid #0dcaf0;
+}
+#projects > span {
+  font-size: 6rem;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  color: #343a40;
+  opacity: 0.2;
+  margin: 0 auto;
+}
+#projects a {
+  text-decoration: none;
+  color: #111418;
+}
+
+.project-tile {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1em;
+}
+
+.card {
+  position: relative;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  background-color: #343a40;
+  aspect-ratio: 4/3;
+  background-size: cover;
+}
+.card:hover div {
+  visibility: visible;
+  filter: brigthness(80%);
+}
+.card div {
+  color: #fff;
+  visibility: hidden;
+  position: relative;
+  z-index: 2;
+}
+.card div:first-of-type {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.card div:nth-of-type(2) {
+  font-size: 0.8;
+  text-align: center;
+}
+
+#card1 {
+  background-image: url("https://i0.wp.com/ctmirror-images.s3.amazonaws.com/wp-content/uploads/2021/03/Armstrong-Court-housing-e1617112594933.jpg?fit=1200%2C664&ssl=1");
+  transition: all 0.5s ease;
+}
+#card1:hover {
+  background-image: url("https://wpamelia.com/wp-content/uploads/2019/02/astronomy-constellation-dark-998641.jpg");
+}
+
+#card2 {
+  background-image: url("https://media.istockphoto.com/id/155438989/photo/computer-security.jpg?s=170667a&w=0&k=20&c=ZuJSVTQyCiN1T6TH3mW-A5mxxqpf16s-at46DWml4og=");
+  transition: all 0.5s ease;
+}
+#card2:hover {
+  background-image: url("https://wpamelia.com/wp-content/uploads/2019/02/astronomy-constellation-dark-998641.jpg");
+}
+
+#card3 {
+  background-image: url("https://media.istockphoto.com/id/547050606/photo/rock-paper-scissors.jpg?b=1&s=170667a&w=0&k=20&c=YZgmyHQtMijgBtpFBAQ5xI4dQDmUnzpMCfcAA9c6Bz0=");
+  transition: all 0.5s ease;
+}
+#card3:hover {
+  background-image: url("https://wpamelia.com/wp-content/uploads/2019/02/astronomy-constellation-dark-998641.jpg");
+}
+
+#card4 {
+  background-image: url("https://img.freepik.com/premium-vector/vector-fight-comic-background-design-red-blue-color_545556-247.jpg");
+  transition: all 0.5s ease;
+}
+#card4:hover {
+  background-image: url("https://wpamelia.com/wp-content/uploads/2019/02/astronomy-constellation-dark-998641.jpg");
+}
+
+#card5 {
+  background-image: url("https://media.licdn.com/dms/image/D4D12AQElWZlRhnriJQ/article-cover_image-shrink_720_1280/0/1679080544883?e=2147483647&v=beta&t=lp1yqdK9f6LEP7WKsTDpHVJmPQcDGzzdgvhAwrm0wcY");
+  transition: all 0.5s ease;
+}
+#card5:hover {
+  background-image: url("https://wpamelia.com/wp-content/uploads/2019/02/astronomy-constellation-dark-998641.jpg");
+}
+
+#card6 {
+  background-image: url("https://cdna.artstation.com/p/assets/images/images/044/129/836/large/murshid-alam-couch.jpg?1639159556");
+  transition: all 0.5s ease;
+}
+#card6:hover {
+  background-image: url("https://wpamelia.com/wp-content/uploads/2019/02/astronomy-constellation-dark-998641.jpg");
+}
+
+#contact {
+  margin: 6em 0em;
+  padding: 4em 2em 2em 2em;
+  position: relative;
+}
+#contact h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 2em;
+}
+#contact h2 > span {
+  border-bottom: 0.1em solid #0dcaf0;
+}
+#contact > span {
+  font-size: 6rem;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  color: #343a40;
+  opacity: 0.2;
+  margin: 0 auto;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+#contact-form h3 {
+  margin-bottom: 1em;
+}
+#contact-form input,
+#contact-form textarea {
+  padding: 1em;
+  border-radius: 1em;
+  border: 0.1em solid rgba(0, 0, 0, 0.1);
+}
+#contact-form input:focus,
+#contact-form textarea:focus {
+  outline: none;
+  border: 0.2em solid #0dcaf0;
+}
+#contact-form button {
+  background-color: #0dcaf0;
+  color: #fff;
+  padding: 1em;
+  border: none;
+  border-radius: 2em;
+  font-size: 1.05rem;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0.1em 0.1em 0.25em rgba(0, 0, 0, 0.4);
+  transition: all 0.15s ease;
+  margin: 1em 0;
+}
+#contact-form button:hover {
+  filter: brightness(95%);
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    padding: 4em 0;
+  }
+
+  #navbar {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4em;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 20;
+  }
+
+  .avatar img,
+.avatar p {
+    display: none;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  #welcome-section {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .aboutText {
+    flex-direction: column;
+  }
+
+  .squares {
+    grid-template-columns: 1fr;
+  }
+
+  .project-tile {
+    grid-template-columns: 1fr;
+  }
+}
